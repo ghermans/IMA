@@ -36,7 +36,8 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    <span class="fa fa-cogs"></span>
+                    IMA
                 </a>
             </div>
 
@@ -46,6 +47,7 @@
                     <div class="nav navbar-nav">
                         <li><a href="">Requests</a></li>
                         <li><a href="">Permissions</a></li>
+                        <li><a href="">Settings</a></li>
                         <li></li>
                     </div>
                 </ul>
