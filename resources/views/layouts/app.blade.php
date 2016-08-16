@@ -62,6 +62,10 @@
                         <li>
                             <a href="">
                                 <span class="fa fa-bell"></span>
+
+                                @if(count(auth()->user()->notifications) > 0)
+                                    <span class="label label-info"> {{ count(auth()->user()->notifications) }} </span>
+                                @endif
                             </a>
                         </li>
                         <li class="dropdown">

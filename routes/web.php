@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/profile/settings', 'AccountController@AccountInformation')->name('profile.settings');
 Route::post('/profile/settings/information', 'AccountController@StoreInformation')->name('profile.settings.information');
+Route::post('/profile/settings/password', 'AccountController@StorePassword')->name('profile.settings.password');
 Route::get('/home', 'HomeController@index');

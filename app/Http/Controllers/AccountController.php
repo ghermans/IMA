@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\ChangePassword;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -36,8 +37,8 @@ class AccountController extends Controller
      */
     public function StoreInformation(Requests\AccountInformation $input)
     {
-        $userId = auth()->user()->id;
-        User::find($userId)->update($input->except('_token'));
+        $user = auth()->user();
+        User::find($user->id)->update($input->except('_token'));
 
         session()->flash('message', 'Account information has been updated.');
         return redirect()->back();
@@ -52,8 +53,11 @@ class AccountController extends Controller
      */
     public function StorePassword(Requests\AccountPassword $input)
     {
-        $userId = auth()-user()->id;
-        User::find($userId)->update($input->except('_token'));
+        $user = auth()->user();
+
+        if (User::find($user->id)->update($input->except('_token'))) {
+            $user->notify(new ChangePassword());
+        }
 
         session()->flash('message', 'The account password has been updated');
         return redirect()->back();

@@ -2,7 +2,8 @@
     <div class="panel-heading">Security information</div>
 
     <div class="panel-body">
-        <form action="" class="form-horizontal" method="POST">
+        <form action="{{ route('profile.settings.password') }}" class="form-horizontal" method="POST">
+            {{ csrf_field() }}
 
             {{-- password form-group --}}
             <div class="form-group">
