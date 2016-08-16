@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/profile/settings', 'AccountController@AccountInformation')->name('profile.settings');
+Route::get('/home', 'HomeController@index');
