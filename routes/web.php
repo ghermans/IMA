@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/settings', 'SettingsController@View')->name('settings');
+
+Route::get('/staff', 'StaffController@index')->name('staff');
+
 Route::get('/profile/settings', 'AccountController@AccountInformation')->name('profile.settings');
 Route::post('/profile/settings/information', 'AccountController@StoreInformation')->name('profile.settings.information');
 Route::post('/profile/settings/password', 'AccountController@StorePassword')->name('profile.settings.password');

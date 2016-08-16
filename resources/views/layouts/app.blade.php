@@ -47,8 +47,8 @@
                     <div class="nav navbar-nav">
                         <li><a href="">Requests</a></li>
                         <li><a href="">Permissions</a></li>
-                        <li><a href="">Platform logins</a></li>
-                        <li><a href="">Settings</a></li>
+                        <li><a href="{{ route('staff') }}">Platform logins</a></li>
+                        <li><a href="{{ route('settings') }}">Settings</a></li>
                     </div>
                 </ul>
 
@@ -74,7 +74,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="">Account settings</a></li>
+                                <li><a href="{{ route('profile.settings') }}">Account settings</a></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();

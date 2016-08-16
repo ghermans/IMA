@@ -20,6 +20,12 @@ class SettingsController extends Controller
 
     }
 
+    /**
+     * Settings view.
+     *
+     * @url    GET|HEAD: /settings
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function View()
     {
         // Backup settings
