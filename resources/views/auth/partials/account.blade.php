@@ -2,7 +2,8 @@
     <div class="panel-heading">Account Information</div>
 
     <div class="panel-body">
-        <form class="form-horizontal" method="POST" action="">
+        <form class="form-horizontal" method="POST" action="{{ route('profile.settings.information') }}">
+            {{ csrf_field() }}
 
             {{-- Name form-group --}}
             <div class="form-group">
