@@ -21,7 +21,7 @@
                             <div class="form-group">
                                 <div class="col-sm-8">
                                     <button class="btn btn-primary" type="submit">Search</button>
-                                    <button class="btn btn-default">Create new login</button>
+                                    <a href="{{ route('staff.register') }}" class="btn btn-default">Create new login</a>
                                 </div>
                             </div>
                         </form>
@@ -37,6 +37,39 @@
                 @if(count($logins) > 0)
                     <div class="panel panel-default">
                         <div class="panel-body">
+                            {{-- Overview table --}}
+                            <table class="table table-hover table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name:</th>
+                                        <th>Email</th>
+                                        <th>Created at</th>
+                                        <th></th> {{-- Options --}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($logins as $login)
+                                        <tr>
+                                            <td><code>#U{{ $login->id }}</code></td>
+                                            <td> {{ $login->name }} </td>
+                                            <td> {{ $login->email }}</td>
+                                            <td> {{ $login->created_at }}</td>
+
+                                            {{-- Functions & options --}}
+                                            <td>
+                                                <a href="" class="label label-primary">Show</a>
+                                                <a href="" class="label label-warning">Edit</a>
+                                                <a href="" class="label label-danger">Delete</a>
+                                            </td>
+                                            {{-- End functions & options --}}
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            {{-- End overview table --}}
+
+
                             {{-- Pagination --}}
                             {{ $logins->render() }}
                         </div>
