@@ -36,12 +36,18 @@ class SettingsController extends Controller
         return view('settings.index', $data);
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function BackUpSettingsStore()
     {
         session()->flash('message', 'Backup settings has been saved.');
         return redirect()->back();
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function ApplicationSettingsStore()
     {
         session()->flash('message', 'Application settings has been saved.');
