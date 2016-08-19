@@ -18,7 +18,7 @@ class StaffController extends Controller
     // TODO: Add phpunit tests
 
     /**
-     * StaffCOntroller constructor.
+     * StaffController constructor.
      */
     public function __construct()
     {

@@ -758,12 +758,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "eb6472a09a3d356e94fc98fddf886c00f42eac93"
+                "reference": "9af5e9d734e42718608ada9c514db7efb586fdd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/eb6472a09a3d356e94fc98fddf886c00f42eac93",
-                "reference": "eb6472a09a3d356e94fc98fddf886c00f42eac93",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/9af5e9d734e42718608ada9c514db7efb586fdd9",
+                "reference": "9af5e9d734e42718608ada9c514db7efb586fdd9",
                 "shasum": ""
             },
             "require": {
@@ -814,7 +814,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2016-08-19 12:26:22"
+            "time": "2016-08-19 19:20:56"
         },
         {
             "name": "laravel/scout",
@@ -822,12 +822,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "aa713923b3dc2625d3f76eb91edfe5447e83833c"
+                "reference": "68d8171c7df5802f47fe9cb725c5e5452f96ddf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/aa713923b3dc2625d3f76eb91edfe5447e83833c",
-                "reference": "aa713923b3dc2625d3f76eb91edfe5447e83833c",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/68d8171c7df5802f47fe9cb725c5e5452f96ddf9",
+                "reference": "68d8171c7df5802f47fe9cb725c5e5452f96ddf9",
                 "shasum": ""
             },
             "require": {
@@ -874,7 +874,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2016-08-15 23:42:13"
+            "time": "2016-08-19 15:54:19"
         },
         {
             "name": "lcobucci/jwt",

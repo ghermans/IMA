@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <form action="" method="POST" class="form-horizontal">
+                        <form action="{{ route('requests.store') }}" method="POST" class="form-horizontal">
 
                             {{-- CSRF token --}}
                             {{ csrf_field() }}

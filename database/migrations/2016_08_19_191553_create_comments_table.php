@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRequestStatusesTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateRequestStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('request_statuses', function (Blueprint $table) {
+        // TODO: Add relationship table for comments.
+
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('css_class');
-            $table->text('description');
+            $table->string('user_id');
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateRequestStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('request_statuses');
+        Schema::drop('comments');
     }
 }

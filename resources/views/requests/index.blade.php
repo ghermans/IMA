@@ -19,7 +19,7 @@
 
                         <div class="pull-right">
                             <a href="{{ route('requests.register') }}" class="btn btn-primary">Create request</a>
-                            <a href="" class="btn btn-info">My requests</a>
+                            <a href="{{ route('requests.me') }}" class="btn btn-info">My requests</a>
                         </div>
                     </div>
                     </div>
@@ -52,6 +52,18 @@
                         @foreach($requests as $request)
                             <tr>
                                 <td> <code>#R{{ $request->id }}</code></td>
+                                <td>{{ $request->requester->name }}</td>
+                                <td> <span class="label label-info"></span> </td>
+                                <td> {{ $request->employee->name }}</td>
+                                <td> {{ $request->created_at }}</td>
+                                <td> {{ $request->updated_at }}</td>
+
+                                {{-- Options --}}
+                                <td>
+                                    <a href="" class="label label-primary">View</a>
+                                    <a href="" class="label label-primary">Edit</a>
+                                    <a href="{{ route('requests.destroy', ['id' => $request->id]) }}" class="label label-primary">Delete</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
