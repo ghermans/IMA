@@ -29,7 +29,9 @@
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade in" id="api">
-                        @include('auth.partials.api')
+                        <passport-personal-access-tokens></passport-personal-access-tokens>
+                        <passport-clients></passport-clients>
+                        <passport-authorized-clients></passport-authorized-clients>
                     </div>
                 </div>
             </div>

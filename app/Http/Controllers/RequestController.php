@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Permissions;
 use App\Requests as RequestsDb;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -44,7 +46,10 @@ class RequestController extends Controller
      */
     public function create()
     {
-        return view('requests.create');
+        $data['users'] = User::all();
+        $data['perms'] = Permissions::all();
+
+        return view('requests.create', $data);
     }
 
     public function store(Request $request)

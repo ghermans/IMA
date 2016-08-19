@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\InsertPermission;
+use App\Permissions;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Silber\Bouncer\Bouncer;
+use Silber\Bouncer\Database\Role;
 
 /**
  * Class PermsController
@@ -36,10 +41,19 @@ class PermsController extends Controller
      * Insert a new permission(s).
      *
      * @url    POST: /permissions/insert
+     * @param  Requests\PermissionValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function insertPermission()
+    public function insertPermission(Requests\PermissionValidator $input)
     {
+        if (Permissions::create($input->except('_token'))) {
+            $roles = User::whereIs('admin')->get();
+
+            $user  = auth()->user();
+            $user->notify($roles, new InsertPermission());
+        }
+
+        session()->flash('Message', 'Permission has been added');
         return redirect()->back();
     }
 
@@ -47,9 +61,10 @@ class PermsController extends Controller
      * Insert a new application name.
      *
      * @url    POST: /permissions/insert/application.
+     * @param  Requests\PermissionValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function insertApplication()
+    public function insertApplication(Requests\PermissionValidator $input)
     {
         return redirect()->back();
     }

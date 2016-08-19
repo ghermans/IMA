@@ -46,7 +46,7 @@
                 <ul class="nav navbar-nav">
                     <div class="nav navbar-nav">
                         <li><a href="{{ route('requests') }}">Requests</a></li>
-                        <li><a href="">Permissions</a></li>
+                        <li><a href="{{ route('permissions') }}">Permissions</a></li>
                         <li><a href="{{ route('staff') }}">Platform logins</a></li>
                         <li><a href="{{ route('settings') }}">Settings</a></li>
                     </div>

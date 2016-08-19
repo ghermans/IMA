@@ -24,6 +24,10 @@
                                 <div class="col-sm-5">
                                     <select class="form-control" name="employee" id="employee">
                                         <option value="" selected> --select the employee-- </option>
+
+                                        @foreach($users as $user)
+                                            <option value="{{ $user->id }}"> {{ $user->name }} </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -37,6 +41,10 @@
                                 <div class="col-sm-5">
                                     <select class="form-control" multiple name="permissions" id="perms">
                                         <option value="" selected>-- Select your permission(s) --</option>
+
+                                        @foreach($perms as $perm)
+                                            <option value="{{ $perm->id }}"> {{ $perm->name }} </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

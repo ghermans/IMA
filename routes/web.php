@@ -22,6 +22,9 @@ Route::get('/settings', 'SettingsController@View')->name('settings');
 Route::get('/requests', 'RequestController@index')->name('requests');
 Route::get('/requests/register', 'RequestController@create')->name('requests.register');
 
+Route::get('/permissions', 'PermsController@index')->name('permissions');
+Route::post('/permissions/insert', 'PermsController@insertPermission')->name('permission.new');
+
 Route::get('/staff', 'StaffController@index')->name('staff');
 Route::get('/staff/register', 'StaffController@register')->name('staff.register');
 

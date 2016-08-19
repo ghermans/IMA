@@ -173,6 +173,9 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
+        Silber\Bouncer\BouncerServiceProvider::class,
+
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -225,6 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
     ],
 
 ];

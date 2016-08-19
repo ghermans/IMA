@@ -62,4 +62,6 @@ class AccountController extends Controller
         session()->flash('message', 'The account password has been updated');
         return redirect()->back();
     }
+
+
 }

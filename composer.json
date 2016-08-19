@@ -9,7 +9,9 @@
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-debugbar": "^2.2",
         "laravel/scout": "^1.0@dev",
-        "algolia/algoliasearch-client-php": "^1.10"
+        "algolia/algoliasearch-client-php": "^1.10",
+        "laravel/passport": "^1.0@dev",
+        "silber/bouncer": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
