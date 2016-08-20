@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Notification;
 use Silber\Bouncer\Bouncer;
 use Silber\Bouncer\Database\Role;
 
@@ -47,10 +48,10 @@ class PermsController extends Controller
     public function insertPermission(Requests\PermissionValidator $input)
     {
         if (Permissions::create($input->except('_token'))) {
-            //$roles = User::whereIs('admin')->get();
+            $roles = User::whereIs('admin')->get();
 
-            //$user  = auth()->user();
-            //$user->notify($roles, new InsertPermission());
+            $user  = auth()->user();
+            Notification::send($user, new InsertPermission());
         }
 
         session()->flash('Message', 'Permission has been added');

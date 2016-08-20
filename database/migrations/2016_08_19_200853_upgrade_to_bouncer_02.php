@@ -73,7 +73,7 @@ class UpgradeToBouncer02 extends Migration
                 'entity_type' => $type,
                 'entity_id'   => $pivot->user_id,
             ];
-        }, $pivots);
+        }, $pivots->toArray());
 
         DB::table('assigned_roles')->insert($records);
     }
@@ -95,7 +95,7 @@ class UpgradeToBouncer02 extends Migration
                 'entity_type' => $type,
                 'entity_id'   => $pivot->user_id,
             ];
-        }, $pivots);
+        }, $pivots->toArray());
 
         DB::table('permissions')->insert($records);
     }
@@ -117,7 +117,7 @@ class UpgradeToBouncer02 extends Migration
                 'entity_type' => $type,
                 'entity_id'   => $pivot->role_id,
             ];
-        }, $pivots);
+        }, $pivots->toArray());
 
         DB::table('permissions')->insert($records);
     }

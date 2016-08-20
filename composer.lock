@@ -822,12 +822,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "68d8171c7df5802f47fe9cb725c5e5452f96ddf9"
+                "reference": "a108ab58a51d8a3ecb9904a52818971e3cf5bff5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/68d8171c7df5802f47fe9cb725c5e5452f96ddf9",
-                "reference": "68d8171c7df5802f47fe9cb725c5e5452f96ddf9",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/a108ab58a51d8a3ecb9904a52818971e3cf5bff5",
+                "reference": "a108ab58a51d8a3ecb9904a52818971e3cf5bff5",
                 "shasum": ""
             },
             "require": {
@@ -874,7 +874,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2016-08-19 15:54:19"
+            "time": "2016-08-19 22:33:30"
         },
         {
             "name": "lcobucci/jwt",
