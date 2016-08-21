@@ -53,7 +53,7 @@
                             <tr>
                                 <td> <code>#R{{ $request->id }}</code></td>
                                 <td>{{ $request->requester->name }}</td>
-                                <td> <span class="label label-info"></span> </td>
+                                <td><span class="{{ $request->status->css_class }}">{{ $request->status->name }}</span></td>
                                 <td> {{ $request->employee->name }}</td>
                                 <td> {{ $request->created_at }}</td>
                                 <td> {{ $request->updated_at }}</td>

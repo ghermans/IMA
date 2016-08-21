@@ -82,8 +82,10 @@ class RequestController extends Controller
 
         $request = new RequestsDb;
         $request->description = $input->description;
+
         $request->employee()->associate($input->employee);
         $request->requester()->associate($user->id);
+
         $request->status()->associate(1); // 1 = label -> new
 
 
@@ -99,6 +101,9 @@ class RequestController extends Controller
     }
 
     /**
+     * Show a specific permission request.
+     *
+     * @url    GET|HEAD:
      * @param  int $id The request id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
