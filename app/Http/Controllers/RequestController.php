@@ -103,7 +103,7 @@ class RequestController extends Controller
     /**
      * Show a specific permission request.
      *
-     * @url    GET|HEAD:
+     * @url    GET|HEAD: /requests/show/{id}
      * @param  int $id The request id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

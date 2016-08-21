@@ -60,7 +60,7 @@
 
                                 {{-- Options --}}
                                 <td>
-                                    <a href="" class="label label-primary">View</a>
+                                    <a href="{{ route('requests.show', ['id' => $request->id]) }}" class="label label-primary">View</a>
                                     <a href="" class="label label-primary">Edit</a>
                                     <a href="{{ route('requests.destroy', ['id' => $request->id]) }}" class="label label-primary">Delete</a>
                                 </td>
