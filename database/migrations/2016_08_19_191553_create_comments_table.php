@@ -13,13 +13,22 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        // TODO: Add relationship table for comments.
+        // TODO: Add foreign kays to the relationshipt table.
 
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_id');
             $table->text('comment');
             $table->timestamps();
+        });
+
+        Schema::create('comments_requests', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('requests_id');
+            $table->integer('comments_id');
+
+            // Not necessarly needed because it's a relation table.
+            // $table->timestamps
         });
     }
 
@@ -31,5 +40,6 @@ class CreateCommentsTable extends Migration
     public function down()
     {
         Schema::drop('comments');
+        Schema::drop('comments_requests');
     }
 }

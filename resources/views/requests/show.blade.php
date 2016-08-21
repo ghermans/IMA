@@ -14,7 +14,7 @@
 
                         <li role="presentation">
                             <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-                                Comments <span class="label label-info"> {{  }}</span>
+                                Comments <span class="label label-info"></span>
                             </a>
                         </li>
                     </ul>
