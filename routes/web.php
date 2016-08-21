@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/settings', 'SettingsController@View')->name('settings');
 
 Route::get('/requests', 'RequestController@index')->name('requests');
-Route::get('/requests/{id}', 'RequestController@show')->name('requests.show');
+Route::get('/requests/show/{id}', 'RequestController@show')->name('requests.show');
 Route::get('/requests/me', 'RequestController@myRequests')->name('requests.me');
 Route::get('/requests/register', 'RequestController@create')->name('requests.register');
 Route::get('/requests/destroy/{id}', 'RequestController@destroy')->name('requests.destroy');

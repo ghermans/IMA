@@ -6,19 +6,17 @@
 
             {{-- Tab navigation --}}
             <div class="col-sm-12">
-                <div class="col-sm-12">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active">
-                            <a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request info</a>
-                        </li>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request info</a>
+                    </li>
 
-                        <li role="presentation">
-                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-                                Comments <span class="label label-info"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <li role="presentation">
+                        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                            Comments <span class="label label-info"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
             {{-- End tab navigation --}}
 
