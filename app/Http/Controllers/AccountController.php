@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\ChangedAccountSettings;
 use App\Notifications\ChangePassword;
 use App\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
+/**
+ * Class AccountController
+ * @package App\Http\Controllers
+ */
 class AccountController extends Controller
 {
+    /**
+     * AccountController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -37,8 +44,12 @@ class AccountController extends Controller
      */
     public function StoreInformation(Requests\AccountInformation $input)
     {
-        $user = auth()->user();
-        User::find($user->id)->update($input->except('_token'));
+        $user   = auth()->user();
+        $update = User::find($user->id)->update($input->except('_token'));
+
+        if ($update) {
+            $user->notify(new ChangedAccountSettings());
+        }
 
         session()->flash('message', 'Account information has been updated.');
         return redirect()->back();
