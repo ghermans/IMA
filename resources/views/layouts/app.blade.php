@@ -60,7 +60,7 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li>
-                            <a href="">
+                            <a href="{{ route('notifications') }}">
                                 <span class="fa fa-bell"></span>
 
                                 @if(count(auth()->user()->notifications) > 0)

@@ -30,6 +30,8 @@ Route::get('/departments/show/{did}', 'DepartmentsController@show')->name('depar
 Route::get('/departments/create', 'DepartmentController@create')->name('department.create');
 Route::get('/departments/destroy/{did}', 'DepartmentController@destroy')->name('department.destroy');
 
+
+Route::get('/notifications', 'NotificationsController@index')->name('notifications');
 Route::post('/comment/add/{rid}', 'CommentController@store')->name('comment.new');
 Route::get('/comments/destroy/{rid}/{cid}', 'CommentController@destroy')->name('comment.destroy');
 

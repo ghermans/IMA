@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">(((
+    <div class="container">
         <div class="row">
             {{-- Menu --}}
             <div class="col-md-3">
