@@ -59,8 +59,8 @@ class CommentController extends Controller
     public function update(CommentValidator $input, $cid)
     {
         if (RequestsDb::find($cid)->update($input->except('_token'))) {
-            session()->flash('', '');
-            session()->flash('', '');
+            session()->flash('class', '');
+            session()->flash('message', '');
         }
 
         return redirect()->back();

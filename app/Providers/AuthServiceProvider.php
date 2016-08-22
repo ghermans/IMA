@@ -35,7 +35,7 @@ class AuthServiceProvider extends ServiceProvider
             'settings'          => 'Configure the settings.',
         ]);
 
-        // Passport::tokensExpireIn(Carbon::now()->addDays(15));
-        // Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
+        Passport::tokensExpireIn(Carbon::now()->addDays(15));
+        Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
     }
 }

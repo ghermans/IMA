@@ -39,6 +39,7 @@ class PermsController extends Controller
     {
         $data['applications'] = PermsApplication::all();
         $data['permissions']  = Permissions::with('application')->paginate(15);
+
         return view('permissions.index', $data);
     }
 
@@ -81,6 +82,7 @@ class PermsController extends Controller
     /**
      * IMA Permissions - Delete a permission out off the database.
      *
+     * @url    GET|HEAD
      * @param  int $pid The permission id.
      * @return \Illuminate\Http\RedirectResponse
      */
