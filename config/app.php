@@ -176,6 +176,7 @@ return [
         Laravel\Passport\PassportServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -230,7 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Bouncer' => Silber\Bouncer\BouncerFacade::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class
     ],
 
 ];

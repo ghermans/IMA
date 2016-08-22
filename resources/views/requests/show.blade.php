@@ -24,7 +24,7 @@
                     </ul>
                     {{-- /Permission info --}}
 
-                    <div class="panel-body">{{ $request->description }}</div>
+                    <div class="panel-body">{!!  $request->description !!}</div>
                 </div>
                 {{-- /Request info --}}
 

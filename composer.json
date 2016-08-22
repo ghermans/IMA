@@ -12,7 +12,8 @@
         "algolia/algoliasearch-client-php": "^1.10",
         "laravel/passport": "^1.0@dev",
         "silber/bouncer": "dev-master",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "graham-campbell/markdown": "^6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

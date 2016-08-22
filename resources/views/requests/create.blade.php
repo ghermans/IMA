@@ -59,6 +59,7 @@
 
                                 <div class="col-sm-5">
                                     <textarea class="form-control" placeholder="Description" name="description" id="description" rows="7"></textarea>
+                                    <span class="help-block"><i>Markdown supported.</i></span>
                                 </div>
                             </div>
 

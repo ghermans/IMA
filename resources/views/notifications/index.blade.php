@@ -15,6 +15,7 @@
                         <ul class="list-group">
                             @foreach(auth()->user()->unreadNotifications as $notification)
                                 <li class="list-group-item">
+                                    {{-- TODO: set style to css class --}}
                                     <code style="margin-right: 7px;">#N{{ $notification->notifiable_id }}</code>
                                     {{ $notification->data['message'] }}
                                     <span class="pull-right">{{ $notification->created_at }}</span>

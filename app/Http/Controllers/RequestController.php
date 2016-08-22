@@ -6,9 +6,11 @@ use App\Http\Requests\RequestValidator;
 use App\Permissions;
 use App\Requests as RequestsDb;
 use App\User;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use League\CommonMark\Converter;
 
 /**
  * Class RequestController
@@ -19,12 +21,21 @@ class RequestController extends Controller
     // TODO: create unit tests
 
     /**
-     * RequestController constructor.
+     * @var Converter
      */
-    public function __construct()
+    private $converter;
+
+    /**
+     * RequestController constructor.
+     *
+     * @param Converter $converter
+     */
+    public function __construct(Converter $converter)
     {
         $this->middleware('auth');
         // $this->middleware('lang');
+
+        $this->converter = $converter;
     }
 
     /**
@@ -81,7 +92,7 @@ class RequestController extends Controller
         $user = auth()->user();
 
         $request = new RequestsDb;
-        $request->description = $input->description;
+        $request->description = Markdown::convertToHtml($input->description);
 
         $request->employee()->associate($input->employee);
         $request->requester()->associate($user->id);
