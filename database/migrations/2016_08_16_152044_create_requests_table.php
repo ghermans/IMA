@@ -18,6 +18,7 @@ class CreateRequestsTable extends Migration
             $table->integer('user_id');
             $table->integer('status_id');
             $table->integer('requester_id');
+            $table->integer('permission_id');
             $table->text('description');
             $table->timestamps();
         });

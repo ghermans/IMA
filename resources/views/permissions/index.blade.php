@@ -46,9 +46,17 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Permissions</div>
 
-                    <div class="panel-body">
-                        Permissions overview
-                    </div>
+                    <ul class="list-group">
+                        @foreach($permissions as $perm)
+                            <li class="list-group-item">
+                                {{ $perm->application->name }}  - {{ $perm->name }}
+
+                                <span class="pull-right">
+                                    <a href="" class="label label-danger">Delete</a>
+                                </span>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
             {{-- End content --}}

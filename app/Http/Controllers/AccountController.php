@@ -7,6 +7,7 @@ use App\Notifications\ChangePassword;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Intervention\Image\Facades\Image;
 
 /**
  * Class AccountController
@@ -44,8 +45,21 @@ class AccountController extends Controller
      */
     public function StoreInformation(Requests\AccountInformation $input)
     {
+        // dd($input->all());
         $user   = auth()->user();
         $update = User::find($user->id)->update($input->except('_token'));
+
+        if ($input->file()) {
+            $image     = $input->file('avatar');
+            $filename  = time() . '.' . $image->getClientOriginalExtension();
+            $path      = public_path('avatars/' . $filename);
+
+            Image::make($image->getRealPath())->resize(200, 200)->save($path);
+
+            $db         = User::find($user->id);
+            $db->avatar = $filename;
+            $db->save();
+        }
 
         if ($update) {
             $user->notify(new ChangedAccountSettings());
@@ -66,7 +80,7 @@ class AccountController extends Controller
     {
         $user = auth()->user();
 
-        if (User::find($user->id)->update($input->except('_token'))) {
+        if (User::find($user->id)->update($input->except(['_token', 'avatar']))) {
             $user->notify(new ChangePassword());
         }
 

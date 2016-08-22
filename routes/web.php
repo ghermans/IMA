@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::get('/home', 'RequestController@index');
 
 Auth::routes();
 
@@ -26,8 +25,12 @@ Route::get('/requests/register', 'RequestController@create')->name('requests.reg
 Route::get('/requests/destroy/{id}', 'RequestController@destroy')->name('requests.destroy');
 Route::post('/requests/register', 'RequestController@store')->name('requests.store');
 
+Route::post('/comment/add/{rid}', 'CommentController@store')->name('comment.new');
+Route::get('/comments/destroy/{rid}/{cid}', 'CommentController@destroy')->name('comment.destroy');
+
 Route::get('/permissions', 'PermsController@index')->name('permissions');
 Route::post('/permissions/insert', 'PermsController@insertPermission')->name('permission.new');
+Route::post('/permissions/insert/application', 'PermsController@insertApplication')->name('application.new');
 
 Route::get('/staff', 'StaffController@index')->name('staff');
 Route::get('/staff/register', 'StaffController@register')->name('staff.register');
@@ -35,4 +38,3 @@ Route::get('/staff/register', 'StaffController@register')->name('staff.register'
 Route::get('/profile/settings', 'AccountController@AccountInformation')->name('profile.settings');
 Route::post('/profile/settings/information', 'AccountController@StoreInformation')->name('profile.settings.information');
 Route::post('/profile/settings/password', 'AccountController@StorePassword')->name('profile.settings.password');
-Route::get('/home', 'HomeController@index');

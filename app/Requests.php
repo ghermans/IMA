@@ -11,7 +11,7 @@ class Requests extends Model
      *
      * @var array
      */
-    protected $fillable = ['status_id', 'user_id', 'requester_id', 'title', 'description'];
+    protected $fillable = ['status_id', 'user_id', 'permission_id', 'requester_id', 'title', 'description'];
 
     /**
      * Status for the request.
@@ -41,6 +41,19 @@ class Requests extends Model
     public function requester()
     {
         return $this->belongsTo('App\User', 'requester_id', 'id');
+    }
+
+
+    /**
+     * Permission request
+     *
+     * The requested permission relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function permission()
+    {
+        return $this->belongsTo('App\Permissions', 'permission_id', 'id');
     }
 
     /**

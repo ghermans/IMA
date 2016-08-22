@@ -35,15 +35,17 @@
                             {{-- Permission type(s) form-group --}}
                             <div class="form-group">
                                 <label for="perms" class="col-sm-2 control-label">
-                                    Permission(s): <span class="text-danger">*</span>
+                                    Permission: <span class="text-danger">*</span>
                                 </label>
 
                                 <div class="col-sm-5">
-                                    <select class="form-control" multiple name="permissions" id="perms">
+                                    <select class="form-control" name="permissions" id="perms">
                                         <option value="" selected>-- Select your permission(s) --</option>
 
                                         @foreach($perms as $perm)
-                                            <option value="{{ $perm->id }}"> {{ $perm->name }} </option>
+                                            <option value="{{ $perm->id }}">
+                                                {{ $perm->application->name }} - {{ $perm->name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "78607c83cab1bfc67c7af302a1a9a850",
-    "content-hash": "44e1a2a797add5590e5ccb7227ed6940",
+    "hash": "a78ea3aec753370d58fed539fae92cea",
+    "content-hash": "85db78193a72e5469b6d07159e4fd15b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -481,6 +481,68 @@
             "time": "2016-06-24 23:00:38"
         },
         {
+            "name": "intervention/image",
+            "version": "2.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "22088b04728a039bd1fc32f7e79a89a118b78698"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/22088b04728a039bd1fc32f7e79a89a118b78698",
+                "reference": "22088b04728a039bd1fc32f7e79a89a118b78698",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2016-04-26 14:08:40"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -758,12 +820,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "3d0b02dd1a3c0e4c6d7a8a3c895933b69ca9d7e3"
+                "reference": "ee63ae81a437c560e7b1a36a92e1c59ba2140a11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/3d0b02dd1a3c0e4c6d7a8a3c895933b69ca9d7e3",
-                "reference": "3d0b02dd1a3c0e4c6d7a8a3c895933b69ca9d7e3",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/ee63ae81a437c560e7b1a36a92e1c59ba2140a11",
+                "reference": "ee63ae81a437c560e7b1a36a92e1c59ba2140a11",
                 "shasum": ""
             },
             "require": {
@@ -814,7 +876,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2016-08-20 22:20:01"
+            "time": "2016-08-21 12:37:55"
         },
         {
             "name": "laravel/scout",
@@ -822,12 +884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "584ff7442dfe57f21492f7a127bf38973fe7a548"
+                "reference": "fdf4030d6921aec38c51cf546fd28e8672cbc878"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/584ff7442dfe57f21492f7a127bf38973fe7a548",
-                "reference": "584ff7442dfe57f21492f7a127bf38973fe7a548",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/fdf4030d6921aec38c51cf546fd28e8672cbc878",
+                "reference": "fdf4030d6921aec38c51cf546fd28e8672cbc878",
                 "shasum": ""
             },
             "require": {
@@ -874,7 +936,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2016-08-20 22:14:42"
+            "time": "2016-08-22 00:18:05"
         },
         {
             "name": "lcobucci/jwt",

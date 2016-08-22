@@ -64,7 +64,7 @@ class RequestController extends Controller
     public function create()
     {
         $data['users'] = User::all();
-        $data['perms'] = Permissions::all();
+        $data['perms'] = Permissions::with('application')->get();
 
         return view('requests.create', $data);
     }
@@ -85,6 +85,7 @@ class RequestController extends Controller
 
         $request->employee()->associate($input->employee);
         $request->requester()->associate($user->id);
+        $request->permission()->associate($input->permissions);
 
         $request->status()->associate(1); // 1 = label -> new
 
@@ -109,7 +110,7 @@ class RequestController extends Controller
      */
     public function show($id)
     {
-        $relations = ['status', 'employee', 'requester', 'comments'];
+        $relations = ['status', 'employee', 'requester', 'permission.application', 'comments.user'];
         $data['request'] = RequestsDb::with($relations)->find($id);
 
         return view('requests.show', $data);
@@ -166,10 +167,13 @@ class RequestController extends Controller
      */
     public function destroy($id)
     {
-        RequestsDb::destroy($id);
+        $deleteRequest = RequestsDb::destroy($id);
+        $relation      = RequestsDb::find($id)->comments()->sync([]);
 
-        session()->flash('message', 'Request has been deleted');
-        session()->flash('class', 'alert alert-succes');
+        if ($deleteRequest && $relation) {
+            session()->flash('message', 'Request has been deleted');
+            session()->flash('class', 'alert alert-succes');
+        }
 
         return redirect()->back();
     }

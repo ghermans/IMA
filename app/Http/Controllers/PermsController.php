@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Notifications\InsertPermission;
+use App\Notifications\newApplication;
 use App\Permissions;
+use App\PermsApplication;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -35,7 +37,9 @@ class PermsController extends Controller
      */
     public function index()
     {
-        return view('permissions.index');
+        $data['applications'] = PermsApplication::all();
+        $data['permissions']  = Permissions::with('application')->paginate(15);
+        return view('permissions.index', $data);
     }
 
     /**
@@ -65,6 +69,25 @@ class PermsController extends Controller
      */
     public function insertApplication(Requests\PermissionValidator $input)
     {
+        if (PermsApplication::create($input->except('_token'))) {
+            $users = User::whereIs('Administrator')->get();
+            Notification::send($users, new newApplication());
+        }
+
+        session()->flash('message', 'Application has been added');
         return redirect()->back();
+    }
+
+    /**
+     * IMA Permissions - Delete a permission out off the database.
+     *
+     * @param  int $pid The permission id.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($pid)
+    {
+        // TODO: Also need to delete the open requests for the permission.
+
+       return redirect()->back();
     }
 }

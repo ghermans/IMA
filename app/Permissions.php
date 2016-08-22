@@ -18,7 +18,7 @@ class Permissions extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'application_id'];
 
     /**
      * Hidden fields
@@ -26,4 +26,16 @@ class Permissions extends Model
      * @var array
      */
     protected $hidden = ['created_at', 'updated_at'];
+
+    /**
+     * Application relation
+     * ----
+     * Get the application name for the specific permission.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function application()
+    {
+        return $this->belongsTo('App\PermsApplication', 'application_id', 'id');
+    }
 }

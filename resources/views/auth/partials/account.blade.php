@@ -2,7 +2,7 @@
     <div class="panel-heading">Account Information</div>
 
     <div class="panel-body">
-        <form class="form-horizontal" method="POST" action="{{ route('profile.settings.information') }}">
+        <form class="form-horizontal" method="POST" action="{{ route('profile.settings.information') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             {{-- Name form-group --}}
@@ -24,6 +24,15 @@
 
                 <div class="col-sm-8">
                     <input type="email" class="form-control" name="email" value="{{ auth()->user()->email }}" placeholder="Your email address">
+                </div>
+            </div>
+
+            {{-- Profile avatar form-group --}}
+            <div class="form-group">
+                <label for="avatar" class="col-sm-2 control-label"> Profile image: </label>
+
+                <div class="col-sm-8">
+                    <input type="file" name="avatar" id="avatar">
                 </div>
             </div>
 

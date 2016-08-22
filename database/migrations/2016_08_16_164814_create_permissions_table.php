@@ -15,6 +15,7 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('Application_Permissions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('application_id');
             $table->string('name');
             $table->text('description');
             $table->timestamps();
