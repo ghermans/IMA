@@ -178,8 +178,8 @@ class RequestController extends Controller
      */
     public function destroy($id)
     {
-        $deleteRequest = RequestsDb::destroy($id);
         $relation      = RequestsDb::find($id)->comments()->sync([]);
+        $deleteRequest = RequestsDb::destroy($id);
 
         if ($deleteRequest && $relation) {
             session()->flash('message', 'Request has been deleted');
