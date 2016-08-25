@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4c1738f191ee586f8f3c8d08110eac9e",
-    "content-hash": "38f74e0e538e05bf9b4e42b8db64d256",
+    "hash": "644277d73b8e2fdcd8627470d73fbf17",
+    "content-hash": "b21c1cd1ac5b679cc90968423e5be64e",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -57,6 +57,69 @@
             "description": "Algolia Search API Client for PHP",
             "homepage": "https://github.com/algolia/algoliasearch-client-php",
             "time": "2016-08-05 13:06:14"
+        },
+        {
+            "name": "alt-three/emoji",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Emoji.git",
+                "reference": "631119fb03162af8f42f7eda4c1f92c87611e36f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/631119fb03162af8f42f7eda4c1f92c87611e36f",
+                "reference": "631119fb03162af8f42f7eda4c1f92c87611e36f",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^5.3|^6.0",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "league/commonmark": "^0.13",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/markdown": "^6.0",
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Emoji\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "An Emoji Parser For Laravel 5",
+            "keywords": [
+                "Alt Three",
+                "emoji",
+                "parser"
+            ],
+            "time": "2016-04-22 17:24:35"
         },
         {
             "name": "barryvdh/laravel-debugbar",

@@ -47,7 +47,18 @@
                     <div class="nav navbar-nav">
                         <li><a href="{{ route('requests') }}">Requests</a></li>
                         <li><a href="{{ route('permissions') }}">Permissions</a></li>
-                        <li><a href="{{ route('staff') }}">Platform logins</a></li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+                                Staff <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('staff') }}">Staff members</a></li>
+                                <li><a href="{{ route('departments') }}">Departments</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="{{ route('settings') }}">Settings</a></li>
                     </div>
                 </ul>

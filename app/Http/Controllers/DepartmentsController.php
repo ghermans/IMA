@@ -19,7 +19,7 @@ class DepartmentsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        // $this->middleware('lang');
+        $this->middleware('lang');
     }
 
     /**
@@ -31,7 +31,7 @@ class DepartmentsController extends Controller
     public function index()
     {
         $data['departments'] = Department::paginate(15);
-        return view('', $data);
+        return view('departments.index', $data);
     }
 
     /**

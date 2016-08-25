@@ -33,7 +33,7 @@ class RequestController extends Controller
     public function __construct(Converter $converter)
     {
         $this->middleware('auth');
-        // $this->middleware('lang');
+        $this->middleware('lang');
 
         $this->converter = $converter;
     }

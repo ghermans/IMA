@@ -168,6 +168,7 @@ return [
          */
         Barryvdh\Debugbar\ServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
+        AltThree\Emoji\EmojiServiceProvider::class,
 
         /*
          * Application Service Providers...

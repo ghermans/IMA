@@ -5795,4 +5795,8 @@ button.close {
   border-right-color: #ddd;
   border-width: 8px; }
 
+.emoji {
+  height: 20px;
+  width: 20px; }
+
 /*# sourceMappingURL=app.css.map */

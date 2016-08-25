@@ -39,7 +39,9 @@ return [
     |
     */
 
-    'extensions' => [],
+    'extensions' => [
+        AltThree\Emoji\EmojiExtension::class
+    ],
 
     /*
     |--------------------------------------------------------------------------
