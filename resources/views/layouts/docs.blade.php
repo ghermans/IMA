@@ -13,6 +13,7 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 
         <!-- Scripts -->
         <script src="https://use.fontawesome.com/03ef6d900b.js"></script>
@@ -102,7 +103,21 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    @yield('content')
+                </div>
+
+                <div class="col-sm-3">
+                    <nav>
+                        <div class="list-group">
+                            <a href="" class="list-group-item">Emoticons</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
         <!-- Scripts -->
         <script src="/js/app.js"></script>

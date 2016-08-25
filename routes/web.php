@@ -25,6 +25,8 @@ Route::get('/requests/register', 'RequestController@create')->name('requests.reg
 Route::get('/requests/destroy/{id}', 'RequestController@destroy')->name('requests.destroy');
 Route::post('/requests/register', 'RequestController@store')->name('requests.store');
 
+Route::get('/docs', 'DocsController@emoticonDocs')->name('documentation');
+
 Route::get('/departments', 'DepartmentsController@index')->name('departments');
 Route::get('/departments/show/{did}', 'DepartmentsController@show')->name('department.specific');
 Route::get('/departments/create', 'DepartmentController@create')->name('department.create');
