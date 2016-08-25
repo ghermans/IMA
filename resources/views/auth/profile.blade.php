@@ -14,6 +14,12 @@
                         <a href="#api" aria-controls="profile" role="tab" data-toggle="tab" class="list-group-item">API information</a>
                     </div>
                 </div>
+
+                <div class="list-group">
+                    <a href="" class="list-group-item">
+                        <span class="fa fa-book"></span> Documentation
+                    </a>
+                </div>
             </div>
             {{-- End menu --}}
 

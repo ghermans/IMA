@@ -102,6 +102,10 @@ class DepartmentsController extends Controller
      */
     public function destroy($did)
     {
+        $department = Department::find($did);
+        $department->managers()->sync([]);
+
+        Department::destroy($did);
         return redirect()->back();
     }
 }

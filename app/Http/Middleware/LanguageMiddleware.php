@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Input;
  * Class LanguageMiddlware
  * @package App\Http\Middleware
  */
-class LanguageMiddlware
+class LanguageMiddleware
 {
     /**
      * @var array

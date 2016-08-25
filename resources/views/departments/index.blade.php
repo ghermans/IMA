@@ -19,6 +19,7 @@
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary">Search</button>
                                 <a href="" class="btn btn-default">New department</a>
+                                <a href="" class="btn btn-default">New department team</a>
                             </div>
                         </div>
                     </form>
@@ -27,15 +28,15 @@
             {{-- /Search component --}}
 
             {{-- content --}}
-            <div class="panel panel-default">
-                <div class="panel-heading">Departments overview:</div>
+            @if(count($departments) === 0)
+                <div class="alert alert-info">
+                    There are no departments in the system.
+                </div>
+            @else
+                <div class="panel panel-default">
+                    <div class="panel-heading">Departments overview:</div>
 
-                <div class="panel-body">
-                    @if(count($departments) === 0)
-                        <div class="alert alert-info">
-                            There are no departments in the system.
-                        </div>
-                    @else
+                    <div class="panel-body">
                         <table class="table table-hover table-condensed">
                             <thead>
                                 <tr>
@@ -48,18 +49,21 @@
                             </thead>
                             <tbody>
                                 @foreach($departments as $department)
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><code>#D{{ $department->id }}</code></td>
+                                    <td>{{ $department->name }}</td>
+                                    <td>{{ $department->managers->name }}</td>
+                                    <td>{{ $department->created_at }}</td>
                                     <td></td>
                                 @endforeach
                             </tbody>
                         </table>
-                    @endif
+                    </div>
                 </div>
-            </div>
+            @endif
             {{-- /Content --}}
+
+            {{-- Includes --}}
+            {{-- /Includes --}}
         </div>
     </div>
 </div>
